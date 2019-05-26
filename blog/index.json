@@ -1,0 +1,9 @@
+[
+    {
+        "ref": "https://aragale.github.io/blog/selenium%E4%BD%BF%E7%94%A8chromedriver%E6%96%87%E4%BB%B6%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/",
+        "title": "Selenium使用chromedriver文件占用问题",
+        "section": "blog",
+        "date" : "2019.05.26",
+        "body": " ImportError: sys.meta_path is None, Python is likely shutting down 在使用selenium，通过chrome浏览器编写自动化测试脚本执行用例，将测试结果写入一个文件中。出现了文件占用问题，代码如下：\nfrom selenium import webdriver class BaseFunc: def __init__(self): self.driver = webdriver.Chrome() self.driver.get(\u0026quot;http://localhost/agileone\u0026quot;) self.driver.implicitly_wait(2) # 此处省略一些代码 def __del__(self): self.driver.quit()  import os import glob case_list = glob.glob(r\u0026quot;D:\\project\\python\\GUI\\agileone_add_notice\\cases\\case*.py\u0026quot;) # print(case_list) for file in case_list: command = \u0026quot;python %s 1\u0026gt;\u0026gt;../logs/log.txt 2\u0026gt;\u0026amp;1\u0026quot; % file os.system(command)  错误现象：\nPyCharm控制台没有报错信息，只是乱码显示了一些内容，除了第一次运行脚本时，第一条测试用例成功执行外，后面测试用例均执行失败。\n并且在第二次执行脚本时，第一条用例也无法成功执行，PyCharm控制台仍然没有错误信息\n将脚本在PyCharm终端执行，显示错误信息为：文件被另一个程序占用\n解决方案： 在网上看到一些解决方案，表示将driver.close()替换成driver.quit()即可，但是这未在我的脚本中起作用\n偶然发现，到任务管理器关闭所有的chromedriver.exe，再次运行脚本，第一条用例可执行成功，于是猜测是由于每次打开chromedriver却未成功关闭引起的文件占用，由于未想到更好的解决方案，故而每次打开一个chromedriver以后，手动关闭，添加代码如下：\nos.system(\u0026quot;taskkill -f /IM chromedriver.exe\u0026quot;)  参考  ImportError: sys.meta_path is None, Python is likely shutting down  "
+    }
+]

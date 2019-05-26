@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aragale的博客</title>
+    <link>https://aragale.github.io/</link>
+    <description>Recent content on Aragale的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 May 2019 16:41:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://aragale.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Selenium使用chromedriver文件占用问题</title>
+      <link>https://aragale.github.io/blog/selenium%E4%BD%BF%E7%94%A8chromedriver%E6%96%87%E4%BB%B6%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 26 May 2019 16:41:23 +0800</pubDate>
+      
+      <guid>https://aragale.github.io/blog/selenium%E4%BD%BF%E7%94%A8chromedriver%E6%96%87%E4%BB%B6%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/</guid>
+      <description>ImportError: sys.meta_path is None, Python is likely shutting down 在使用selenium，通过chrome浏览器编写自动化测试脚本执行用例，将测试结果写入一个文件中。出现了文件占用问题，代</description>
+    </item>
+    
+  </channel>
+</rss>
